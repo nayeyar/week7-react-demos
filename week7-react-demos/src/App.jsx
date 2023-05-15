@@ -5,17 +5,43 @@ import './App.css'
 import ListItem from './components/ListItem'
 
 function App() {
+  const data = [
+    {
+      title: "Work on Activate",
+      description: "Activate",
+      time: "10 AM"
+    },
+    {
+      title: "Run Learning Squad",
+      description: "React",
+      time: "11 AM"
+    },
+    {
+      title: "Have Lunch",
+      description: "Lunch",
+      time: "1 PM"
+    },
+  ]
   return (
     <div>
       <h1>Hello</h1>
       <ol>
-        <ListItem taskName="have lunch" description="lunch" time="1PM" />
+        {/* <ListItem taskName="have lunch" description="lunch" time="1PM" />
         <ListItem taskName="start work" description="React demo" time="10AM" />
         <li>
           <h2>Start Work</h2>
           <p>Description: React Demo</p>
           <p>Time: 10AM</p>
-        </li>
+        </li> */}
+        {
+          data.map(task => (
+            <ListItem
+              taskName={task.title}
+              description={task.description}
+              time={task.time}
+            />
+          ))
+        }
       </ol>
     </div>
   )
