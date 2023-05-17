@@ -1,10 +1,11 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+// import reactLogo from './assets/react.svg'
+// import viteLogo from '/vite.svg'
 import './App.css'
 import ListItem from './components/ListItem'
 
 function App() {
+  const [isTaskListVisible, setIsTaskListVisible] = useState(false);
   const data = [
     {
       title: "Work on Activate",
@@ -25,7 +26,7 @@ function App() {
   return (
     <div>
       <h1>Hello</h1>
-      <ol>
+      {isTaskListVisible && <ol>
         {/* <ListItem taskName="have lunch" description="lunch" time="1PM" />
         <ListItem taskName="start work" description="React demo" time="10AM" />
         <li>
@@ -42,7 +43,8 @@ function App() {
             />
           ))
         }
-      </ol>
+      </ol>}
+      <button onClick={() => setIsTaskListVisible(!isTaskListVisible)}>{isTaskListVisible ? "Hide Task" : "Show Task"}</button>
     </div>
   )
 }
